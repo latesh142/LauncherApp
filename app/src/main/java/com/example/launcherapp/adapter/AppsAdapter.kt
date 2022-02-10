@@ -24,11 +24,11 @@ class AppsAdapter (private val mContext: Context, list : ArrayList<ApplicationDa
 
     override fun onBindViewHolder(holder: ListHolder, position: Int) {
         val data = applicationsList[position]
-        holder.appName?.text ="Application Name : "+ data.appName
-        holder.packageName?.text ="Package Name : "+ data.packageName
-        holder.mainActivity?.text ="Main Activity : "+ data.mainActivity
-        holder.versionCode?.text ="Version Code : "+ data.versionCode
-        holder.versionName?.text ="Version Name : "+ data.versionName
+        holder.appName?.text = mContext.getString(R.string.app_name_label) + data.appName
+        holder.packageName?.text = mContext.getString(R.string.package_name_label) + data.packageName
+        holder.mainActivity?.text = mContext.getString(R.string.main_activity_label) + data.mainActivity
+        holder.versionCode?.text = mContext.getString(R.string.version_code_label) + data.versionCode
+        holder.versionName?.text = mContext.getString(R.string.version_name_label) + data.versionName
         holder.appIcon?.setImageDrawable(data.icon)
         holder.container?.setOnClickListener {
             listener.itemClick(data)
